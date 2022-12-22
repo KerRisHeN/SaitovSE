@@ -1,0 +1,13 @@
+arch(barbatos, alive, anemo, bow, 2600).
+arch(morax, alive, geo, polearm, 2600).
+arch(makoto, dead, electro, unknown, 2000).
+arch(ei, alive, electro, polearm, 500).
+arch(nahida, alive, dendro, catalyst, 500).
+young(X) :- arch(X, _, _, _, Z) , 2000 >= Z.
+alive(X) :- arch(X, alive, _, _, _).
+elel(X) :- arch(X, _, electro, _, _).
+/*Some requests:
+ * alive(A), arch(A, B, C, D, F) - find some who are still alive
+ * young(A), arch(A, B, C, D, E) - find some who are less than 2000 years old
+ * elel(A), arch(A, B, C, D, F) - find some whose element is electro
+ * All requests have been tested*/
